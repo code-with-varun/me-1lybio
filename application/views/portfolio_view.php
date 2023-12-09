@@ -1,0 +1,495 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+$base=base_url()."public/";
+?>
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Varunakshay Full-Stack Devloper | MIS Executive | Store Manager - Portfolio </title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	
+	
+	<!-- Font -->
+	
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700%7CAllura" rel="stylesheet">
+	
+	<!-- Stylesheets -->
+	
+	<link href="<?php echo $base;?>common-css/bootstrap.css" rel="stylesheet">
+	
+	<link href="<?php echo $base;?>common-css/ionicons.css" rel="stylesheet">
+	
+	<link href="<?php echo $base;?>common-css/fluidbox.min.css" rel="stylesheet">
+	
+	<link href="<?php echo $base;?>02-cv-boxed/css/styles.css" rel="stylesheet">
+	
+	<link href="<?php echo $base;?>02-cv-boxed/css/responsive.css" rel="stylesheet">
+	
+</head>
+<body>
+	
+	<section class="intro-section">
+		<div class="container">
+		
+			<div class="heading-wrapper">
+				<div class="row">
+					<div class="col-sm-6 col-md-6 col-lg-4">
+						<div class="info">
+							<i class="icon ion-ios-location-outline"></i>
+							<div class="right-area">
+								<h5>Nellithope, 605005</h5>
+								<h5>Puducherry, India</h5>
+								
+							</div><!-- right-area -->
+						</div><!-- info -->
+					</div><!-- col-sm-4 -->
+					
+					<div class="col-sm-6 col-md-6 col-lg-4">
+						<div class="info">
+							<i class="icon ion-ios-telephone-outline"></i>
+							<div class="right-area">
+								<h5>+91-9092608362</h5>
+								<h5>Mon - Fri 10 AM - 6 PM</h5>
+								
+							</div><!-- right-area -->
+						</div><!-- info -->
+					</div><!-- col-sm-4 -->
+					
+					<div class="col-sm-6 col-md-6 col-lg-4">
+						<div class="info">
+							<i class="icon ion-ios-chatboxes-outline"></i>
+							<div class="right-area">
+								<h5>varunakshay23@gmail.com</h5>
+								<h5>Get Reply in 24 hours</h5>
+							
+							</div><!-- right-area -->
+						</div><!-- info -->
+					</div><!-- col-sm-4 -->
+				</div><!-- row -->
+			</div><!-- heading-wrapper -->
+			
+		
+		
+			<div class="intro">
+				<div class="row">
+				
+					<div class="col-sm-8 col-md-4 col-lg-3">
+						<div class="profile-img margin-b-30"><img src="<?php echo $base;?>images/profile-1-250x250.jpg" alt=""></div>
+					</div><!-- col-sm-8 -->
+					
+					<div class="col-sm-10 col-md-5 col-lg-6">		
+							<h2><b>Varun Akshay</b></h2>
+							<h4 class="font-yellow">Full-Stack Devloper | MIS Executive | Store Manager</h4>
+							<ul class="information margin-tb-30">
+								<li><b class="font-yellow">BORN</b> : August 23, 1993</li>
+								<li><b class="font-yellow">Interest</b> : Web Development
+									,
+									Finance and Accounting
+									,
+									
+									Blogging,
+									Time Management
+									,
+									Game developing
+									</li>
+								
+							</ul>
+							<ul class="social-icons">
+								<li><a href="https://github.com/code-with-varun"><i class="ion-social-github"></i></a></li>
+								<li><a href="https://www.linkedin.com/in/varun-akshay-fsd/"><i class="ion-social-linkedin"></i></a></li>
+								<li><a href="https://www.youtube.com/@ThamizhandaIn"><i class="ion-social-youtube"></i></a></li>
+								<li><a href="https://www.instagram.com/varunakshay_fullstack_dev/"><i class="ion-social-instagram"></i></a></li>
+								<!-- <li><a href="#"><i class="ion-social-facebook"></i></a></li> -->
+								
+							</ul>
+					</div><!-- col-sm-8 -->
+					
+					<div class="col-sm-10 col-md-3 col-lg-3">
+						<a class="downlad-btn" href="<?php echo $base;?>images/VARUNAKSHAY-FSD-2023.pdf" download>Download CV</a>
+					</div><!-- col-lg-2 -->
+			
+				</div><!-- row -->
+			
+			</div><!-- intro -->
+		</div><!-- container -->
+	</section><!-- intro-section -->
+	
+	
+	<section class="about-section section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-3">
+					<div class="heading">
+						<h3><b>About me</b></h3>
+						<h6 class="font-lite-black"><b>PROFESSIONAL PATH</b></h6>
+					</div>
+				</div><!-- col-sm-3 -->
+				<div class="col-sm-12 col-md-9">
+					<p class="margin-b-50">A Passionate and proficient Developer with 7 years of diversified experience in IT, Finance, Retail, MIS & Data Analysis looking for the role of Full-stack Developer / MIS Executive / Store Manager leveraging web development, project management and testing skills.</p>
+					
+					<div class="row">
+						<div class="col-sm-6 col-md-6 col-lg-3">
+							<div class="radial-prog-area margin-b-30">
+								<div class="radial-progress" data-prog-percent=".80">
+									<div></div>
+									<h6 class="progress-title"> <small>HTML, CSS <br>WEB DESIGN </small></h6>
+								</div>
+							</div><!-- radial-prog-area-->
+						</div><!-- col-sm-6-->
+					
+						<div class="col-sm-6 col-md-6 col-lg-3">
+							<div class="radial-prog-area margin-b-30">
+								<div class="radial-progress" data-prog-percent=".83">
+									<div></div>
+									<h6 class="progress-title"><small>REACT, EXPRESS, NODE<br>JAVASCRIPT</small></h6>
+								</div>
+							</div><!-- radial-prog-area-->
+						</div><!-- col-sm-6-->
+						
+						<div class="col-sm-6 col-md-6 col-lg-3">
+							<div class="radial-prog-area margin-b-30">
+								<div class="radial-progress" data-prog-percent=".90">
+									<div></div>
+									<h6 class="progress-title"><small>MYSQL, MONGODB, <br>MS-ACCESS<br>DATABASES</small></h6>
+								</div>
+							</div><!-- radial-prog-area-->
+						</div><!-- col-sm-6-->
+						
+						<div class="col-sm-6 col-md-6 col-lg-3">
+							<div class="radial-prog-area margin-b-50">
+								<div class="radial-progress" data-prog-percent=".95">
+									<div></div>
+									<h6 class="progress-title"><small>LARAVEL, CODEIGNITER<br>PHP</small></h6>
+								</div>
+							</div><!-- radial-prog-area-->
+						</div><!-- col-sm-6-->
+
+						<div class="col-sm-6 col-md-6 col-lg-3">
+							<div class="radial-prog-area margin-b-50">
+								<div class="radial-progress" data-prog-percent=".92">
+									<div></div>
+									<h6 class="progress-title"><small>FINANCIAL, SALE, HR MIS<br>ADVANCE EXCEL</small></h6>
+								</div>
+							</div><!-- radial-prog-area-->
+						</div><!-- col-sm-6-->
+
+						<div class="col-sm-6 col-md-6 col-lg-3">
+							<div class="radial-prog-area margin-b-50">
+								<div class="radial-progress" data-prog-percent=".89">
+									<div></div>
+									<h6 class="progress-title"><small>X-SELL, UPSELL, CRM<br>SALES & MARKETING</small></h6>
+								</div>
+							</div><!-- radial-prog-area-->
+						</div><!-- col-sm-6-->
+
+						<div class="col-sm-6 col-md-6 col-lg-3">
+							<div class="radial-prog-area margin-b-50">
+								<div class="radial-progress" data-prog-percent=".85">
+									<div></div>
+									<h6 class="progress-title"><small>PSD,MS 365, GIT<br>OTHERS</small></h6>
+								</div>
+							</div><!-- radial-prog-area-->
+						</div><!-- col-sm-6-->
+
+						<div class="col-sm-6 col-md-6 col-lg-3">
+							<div class="radial-prog-area margin-b-50">
+								<div class="radial-progress" data-prog-percent=".80">
+									<div></div>
+									<h6 class="progress-title"><small>SOFTSKILLS</small></h6>
+								</div>
+							</div><!-- radial-prog-area-->
+						</div><!-- col-sm-6-->
+
+						
+					
+					</div><!-- row -->
+				</div><!-- col-sm-9 -->
+			</div><!-- row -->
+		</div><!-- container -->
+	</section><!-- about-section -->
+	
+	<section class="education-section section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-3">
+					<div class="heading">
+						<h3><b>Professional <br>Experience</b></h3>
+						<h6 class="font-lite-black"><b>PREVIOUS JOBS</b></h6>
+					</div>
+				</div><!-- col-sm-3 -->
+				
+				<div class="col-sm-12 col-md-9">
+				
+					<div class="education-wrapper">
+						<div class="education margin-b-50">
+							<h4><b>Velan
+Info
+Services
+Pvt
+Ltd | Coimbatore,
+India</b></h4>
+							<h5 class="font-yellow"><b>MIS
+							EXECUTIVE </b></h5>
+							<h6 class="font-lite-black margin-t-10">April 2023 - September 2023</h6>
+							
+						</div><!-- education -->
+
+						<div class="experience margin-b-50">
+						<ul class="list margin-b-30">
+							<li>Created 3+ MIS Dashboards for Team performance.</li>
+							<li>Managed 2 MIS reports for Billable hours.</li>
+							<li>Distributed MIS reports to the management with 100% accuracy.</li>
+						</ul>
+						</div><!-- experience -->
+						
+						<div class="education margin-b-50">
+							<h4><b>Datamatics
+Pvt
+Ltd | Puducherry,
+India</b></h4>
+							<h5 class="font-yellow"><b>MIS
+EXECUTIVE</b></h5>
+							<h6 class="font-lite-black margin-t-10">March 2021 - December 2022</h6>
+						
+						</div><!-- education -->
+						<div class="experience margin-b-50">
+						<ul class="list margin-b-30">
+							<li>Handled 13+ MIS reports related to Consumer Durables Product Financing for IDFC Bank.</li>
+							<li>Prepared 3+ Monthly Business Review MIS reports at Product level and company level.</li>
+							<li>Generated and distributed MIS reports for IDFC Sales team with 98% accuracy in a timely manner.</li>
+						</ul>
+						</div><!-- experience -->
+
+						<div class="education margin-b-50">
+							<h4><b>Jockey
+Exclusive
+Store | Trivandrum,
+India</b></h4>
+							<h5 class="font-yellow"><b>STORE MANAGER</b></h5>
+							<h6 class="font-lite-black margin-t-10">December 2016 - January 2021</h6>
+							
+						</div><!-- education -->
+						<div class="experience margin-b-50">
+						<ul class="list margin-b-30">
+							<li>Managed all aspects of store operations & increased sales growth by 15%.</li>
+							<li>Completed routine store inventories from 6+ Vendors every month.</li>
+							<li>Submitted 3+ Weekly reports & 5+ Monthly reports to senior management to aid in business decision-making.</li>
+							<li>Trained 8+ new employees on proper protocols and customer service standards.</li>
+						</ul>
+						</div><!-- experience -->
+
+						<div class="education margin-b-50">
+							<h4><b>Intelenet
+Global
+Services
+Pvt
+Ltd | Puducherry,
+India</b></h4>
+							<h5 class="font-yellow"><b>TELEMARKETER</b></h5>
+							<h6 class="font-lite-black margin-t-10">September 2015 - October 2016</h6>
+							
+						</div><!-- education -->
+						<div class="experience margin-b-50">
+						<ul class="list margin-b-30">
+							<li>Pitched products and services to 200+ Customers per day.</li>
+							<li>Listened to queries & handle them effectively with 98% accuracy.</li>
+							
+						</ul>
+						</div><!-- experience -->
+						
+						
+						<div class="education margin-b-50">
+							<h4><b>Firstsource
+Solutions
+Limited | Puducherry,
+India</b></h4>
+							<h5 class="font-yellow"><b>CUSTOMER SERVICE ASSOCIATE</b></h5>
+							<h6 class="font-lite-black margin-t-10">September 2014 – March 2015</h6>
+							
+							
+						</div><!-- education -->
+						<div class="experience margin-b-50">
+						<ul class="list margin-b-30">
+							<li>Involved in Non voice BPO (Health Care) activities.</li>
+							<li>Processed 500+ Healthcare claims per day.</li>
+						</ul>
+						</div><!-- experience -->
+					</div><!-- education-wrapper -->
+				</div><!-- col-sm-9 -->
+			</div><!-- row -->
+		</div><!-- container -->
+		
+	</section><!-- education-section -->
+
+	<section class="portfolio-section section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-3">
+					<div class="heading">
+						<h3><b>Portfolio</b></h3>
+						<h6 class="font-lite-black"><b>MY WORK</b></h6>
+					</div>
+				</div><!-- col-sm-3 -->
+				
+				<div class="col-sm-12 col-md-9">
+					<div class="portfolioFilter clearfix margin-b-80">
+						<a href="#" data-filter="*" class="current"><b>ALL</b></a>
+						<a href="#" data-filter=".web-apps"><b>WEB APPS</b></a>
+						<a href="#" data-filter=".wordpress"><b>Wordpress</b></a>
+						<a href="#" data-filter=".mis-dashboard"><b>MIS DASHBOARDS</b></a>
+						<a href="#" data-filter=".games"><b>GAMES</b></a>
+					</div><!-- portfolioFilter -->
+				</div><!-- col-sm-8 -->
+			</div><!-- row -->
+			
+			<div class="portfolioContainer  margin-b-50">
+				
+				<div class="p-item web-apps">
+					<a href="<?php echo $base;?>images/portfolio-ispark.jpg" data-fluidbox>
+						<img src="<?php echo $base;?>images/portfolio-ispark.jpg" alt=""></a><h5>ISPARK APP</h5>
+				</div><!-- p-item -->
+				
+				<div class="p-item web-apps">
+					<a href="<?php echo $base;?>images/portfolio-pondynet.jpg" data-fluidbox>
+						<img src="<?php echo $base;?>images/portfolio-pondynet.jpg" alt=""></a><h5>Pondynet App</h5>
+				</div><!-- p-item -->
+				
+				<div class="p-item web-apps">
+					<a href="<?php echo $base;?>images/portfolio-skyeenet.jpg" data-fluidbox>
+						<img src="<?php echo $base;?>images/portfolio-skyeenet.jpg" alt=""></a><h5>Skyeenet App</h5>
+				</div><!-- p-item -->
+				
+				<div class="p-item web-apps">
+					<a class="img" href="<?php echo $base;?>images/portfolio-velan-hr.jpg" data-fluidbox>
+						<img src="<?php echo $base;?>images/portfolio-velan-hr.jpg" alt=""></a><h5>VIS HR Portal</h5>
+				</div><!-- p-item -->
+				
+				<div class="p-item web-apps">
+					<a href="<?php echo $base;?>images/portfolio-powerbooks.jpg" data-fluidbox>
+						<img src="<?php echo $base;?>images/portfolio-powerbooks.jpg" alt=""></a><h5>Powerbooks</h5>
+				</div><!-- p-item -->
+				
+				<div class="p-item wordpress">
+					<a href="<?php echo $base;?>images/portfolio-thamizhanda.jpg" data-fluidbox>
+						<img src="<?php echo $base;?>images/portfolio-thamizhanda.jpg" alt=""></a><h5>Thamizhanda Wordpress</h5>
+				</div><!-- p-item -->
+				<div class="p-item  web-apps">
+					<a href="<?php echo $base;?>images/portfolio-idfc.jpg" data-fluidbox>
+						<img src="<?php echo $base;?>images/portfolio-idfc.jpg" alt=""></a><h5>IDFC Portal</h5>
+				</div><!-- p-item -->
+				<div class="p-item  mis-dashboard">
+					<a href="<?php echo $base;?>images/portfolio-excel.jpg" data-fluidbox>
+						<img src="<?php echo $base;?>images/portfolio-excel.jpg" alt=""></a><h5>Payout MIS</h5>
+				</div><!-- p-item -->
+					
+				<div class="p-item mis-dashboard">
+					<a href="<?php echo $base;?>images/portfolio-excel.jpg" data-fluidbox>
+						<img src="<?php echo $base;?>images/portfolio-excel.jpg" alt=""></a><h5>Performance MIS</h5>
+				</div><!-- p-item -->
+
+				<div class="p-item mis-dashboard">
+					<a href="<?php echo $base;?>images/portfolio-excel.jpg" data-fluidbox>
+						<img src="<?php echo $base;?>images/portfolio-excel.jpg" alt=""></a><h5>Performance + HR MIS</h5>
+				</div><!-- p-item -->
+
+				<div class="p-item mis-dashboard">
+					<a href="<?php echo $base;?>images/portfolio-excel.jpg" data-fluidbox>
+						<img src="<?php echo $base;?>images/portfolio-excel.jpg" alt=""></a><h5>Sales MIS</h5>
+				</div><!-- p-item -->
+
+				<div class="p-item games">
+					<a href="<?php echo $base;?>images/portfolio-tank-battles.jpg" data-fluidbox>
+						<img src="<?php echo $base;?>images/portfolio-tank-battles.jpg" alt=""></a><h5>Battle Tanks Game</h5>
+				</div><!-- p-item -->
+
+				<div class="p-item games">
+					<a href="<?php echo $base;?>images/portfolio-park-a-lot.jpg" data-fluidbox>
+						<img src="<?php echo $base;?>images/portfolio-park-a-lot.jpg" alt=""></a><h5>Park a lot Game</h5>
+				</div><!-- p-item -->
+			
+			</div><!-- portfolioContainer -->
+		</div><!-- container -->
+	</section><!-- portfolio-section -->
+	
+	
+	<section class="experience-section section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-3">
+					<div class="heading">
+						<h3><b>Education</b></h3>
+						<h6 class="font-lite-black"><b>ACADEMIC CAREER</b></h6>
+					</div>
+				</div><!-- col-sm-3 -->
+				
+				<div class="col-sm-12 col-md-9">
+					<div class="experience margin-b-50">
+						<h4><b>Fullstack Development Bootcamp - Javascript</b></h4>
+						<h5 class="font-yellow"><b>Upgrad - Knowledgehut</b></h5>
+						<h6 class="font-lite-black margin-t-10">April 2023 - October 2023
+							</h6>
+						<!-- <p class="margin-tb-30">Duis non volutpat arcu, eu mollis tellus. Sed finibus aliquam neque sit amet sodales. 
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla maximus pellentes que velit, 
+							quis consequat nulla effi citur at. Maecenas sed massa tristique.Duis non volutpat arcu, 
+							eu mollis tellus. Sed finibus aliquam neque sit amet sodales. </p> -->
+						<!-- <ul class="list margin-b-30">
+							<li>Created 3+ MIS Dashboards for Team performance.</li>
+							<li>Managed 2 MIS reports for Billable hours.</li>
+							<li>Distributed MIS reports to the management with 100% accuracy.</li>
+						</ul> -->
+					</div><!-- experience -->
+					
+					<div class="experience margin-b-50">
+						<h4><b>Bachelor's
+							Degree
+							in
+							(Computer
+							Science)</b></h4>
+						<h5 class="font-yellow"><b>RAAK
+							Arts
+							and
+							Science
+							College | Puducherry,
+							India</b></h5>
+						<h6 class="font-lite-black margin-t-10">June 2011 - April 2014</h6>
+					
+					</div><!-- experience -->
+					
+				</div><!-- col-sm-9 -->
+				
+			</div><!-- row -->
+		</div><!-- container -->
+	</section><!-- experience-section -->
+	
+	<footer>
+		<p class="copyright">
+			<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy; <?php echo date('Y'); ?> All rights reserved | Delivered with <i class="ion-heart" aria-hidden="true"></i> by <a href="https://www.thamizhanda.in" target="_blank">Thamizhanda.in</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+		</p>
+	</footer>
+	
+	
+	<!-- SCIPTS -->
+	
+	<script src="<?php echo $base;?>common-js/jquery-3.2.1.min.js"></script>
+	
+	<script src="<?php echo $base;?>common-js/tether.min.js"></script>
+	
+	<script src="<?php echo $base;?>common-js/bootstrap.js"></script>
+	
+	<script src="<?php echo $base;?>common-js/isotope.pkgd.min.js"></script>
+	
+	<script src="<?php echo $base;?>common-js/jquery.waypoints.min.js"></script>
+	
+	<script src="<?php echo $base;?>common-js/progressbar.min.js"></script>
+	
+	<script src="<?php echo $base;?>common-js/jquery.fluidbox.min.js"></script>
+	
+	<script src="<?php echo $base;?>common-js/scripts.js"></script>
+	
+</body>
+</html>
