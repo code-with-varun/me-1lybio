@@ -269,7 +269,7 @@ Exclusive
 Store | Trivandrum,
 India</b></h4>
 							<h5 class="font-yellow"><b>STORE MANAGER</b></h5>
-							<h6 class="font-lite-black margin-t-10">December 2016 - January 2021</h6>
+							<h6 class="font-lite-black margin-t-10">December 2016 - April 2020</h6>
 							
 						</div><!-- education -->
 						<div class="experience margin-b-50">
