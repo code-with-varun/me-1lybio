@@ -886,6 +886,7 @@ const CERTIFICATES_DATA = [
 // 5. INITIALIZATION & EVENT DISPATCHER
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
   initRoleTyper();
   renderSkillPills('all');
   renderRecruiterTags();
@@ -1382,16 +1383,33 @@ function toggleMobileNav() {
   }
 }
 
-// Close mobile nav when clicking any nav link
-document.addEventListener('DOMContentLoaded', () => {
-  const navLinks = document.querySelectorAll('.nav-links a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      const container = document.getElementById('main-nav-links');
-      if (container && container.classList.contains('mobile-open')) {
-        container.classList.remove('mobile-open');
-      }
-    });
-  });
-});
+// ==========================================
+// 19. LIGHT / DARK THEME SYSTEM
+// ==========================================
+function initTheme() {
+  const savedTheme = localStorage.getItem('site-theme') || 'dark';
+  setTheme(savedTheme);
+}
+
+function setTheme(theme) {
+  if (theme === 'light') {
+    document.body.classList.remove('dark-theme');
+    document.body.classList.add('light-theme');
+    document.documentElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('site-theme', 'light');
+  } else {
+    document.body.classList.remove('light-theme');
+    document.body.classList.add('dark-theme');
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('site-theme', 'dark');
+  }
+  if (window.lucide) lucide.createIcons();
+}
+
+function toggleTheme() {
+  const current = document.body.classList.contains('light-theme') ? 'light' : 'dark';
+  const newTheme = current === 'light' ? 'dark' : 'light';
+  setTheme(newTheme);
+}
+
 

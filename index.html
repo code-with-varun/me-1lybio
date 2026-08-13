@@ -50,11 +50,9 @@
         <a href="assets/VARUNAKSHAY_FSD_MIS_RESUME_2024.pdf" download class="btn-cv-header" title="Download Official PDF Resume">
           <i data-lucide="download"></i> <span>Download CV</span>
         </a>
-        <button id="recruiter-toggle-btn" class="btn-secondary" title="Highlight recruiter matching keywords">
-          <i data-lucide="highlighter"></i> <span>Recruiter Mode</span>
-        </button>
-        <button id="contact-open-btn" class="btn-primary" onclick="openContactModal()">
-          <i data-lucide="send"></i> Hire / Contact
+        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Light/Dark Theme" title="Toggle Light/Dark Theme" onclick="toggleTheme()">
+          <i data-lucide="sun" class="sun-icon"></i>
+          <i data-lucide="moon" class="moon-icon"></i>
         </button>
       </div>
 
@@ -111,8 +109,10 @@
 
         <div class="hero-visual">
           <div class="avatar-card glass-card shadow-glow">
-            <div class="avatar-frame">
-              <img id="hero-avatar-img" src="assets/profiles/profile-executive-blazer.png" alt="S Varunakshay" class="avatar-img" onerror="this.src='assets/profiles/avatar-3-sq.png'">
+            <div class="avatar-wrapper">
+              <div class="avatar-frame">
+                <img id="hero-avatar-img" src="assets/profiles/profile-executive-blazer.png" alt="S Varunakshay" class="avatar-img" onerror="this.src='assets/profiles/avatar-3-sq.png'">
+              </div>
               <div class="avatar-overlay-badge">
                 <i data-lucide="star"></i> Star Performer @ Datamatics
               </div>
@@ -854,7 +854,7 @@
         <a href="https://github.com/code-with-varun" target="_blank" class="social-btn github">
           <i data-lucide="github"></i> GitHub
         </a>
-        <a href="https://www.youtube.com/@ThamizhandaIn" target="_blank" class="social-btn youtube">
+        <a href="https://www.youtube.com/@Runit_Infotech" target="_blank" class="social-btn youtube">
           <i data-lucide="youtube"></i> YouTube
         </a>
         <a href="https://www.instagram.com/varunakshay_fullstack_dev/" target="_blank" class="social-btn instagram">
