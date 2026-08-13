@@ -35,14 +35,11 @@
     <div class="nav-container">
       <a href="#" class="brand-logo">
         <span class="logo-accent">⚡</span> VARUN<span class="highlight">AKSHAY</span>
-        <span class="status-badge"><span class="pulse-dot"></span> Available (60D Notice)</span>
       </a>
 
-      <nav class="nav-links">
+      <nav class="nav-links" id="main-nav-links">
         <a href="#about"><i data-lucide="user"></i> About</a>
         <a href="#employment"><i data-lucide="building"></i> Employment</a>
-        <a href="#recruiter-hub"><i data-lucide="search"></i> Recruiter Hub</a>
-        <a href="#appraisal"><i data-lucide="award"></i> Appraisal</a>
         <a href="#experience"><i data-lucide="briefcase"></i> Timeline</a>
         <a href="#projects"><i data-lucide="folder-git-2"></i> Projects (17)</a>
         <a href="#certificates"><i data-lucide="award"></i> Certificates (37)</a>
@@ -93,7 +90,7 @@
           <div class="hero-info-pills">
             <span class="info-pill"><i data-lucide="map-pin"></i> Nellithope, Puducherry, India</span>
             <span class="info-pill"><i data-lucide="compass"></i> Preferred: Chennai, Coimbatore, Puducherry, Madurai, Trichy</span>
-            <span class="info-pill"><i data-lucide="clock"></i> Notice Period: 60 Days (Bond Completed)</span>
+            <span class="info-pill"><i data-lucide="briefcase"></i> CFO Back Office (FAS) • Grade M02</span>
           </div>
 
           <div class="hero-cta-group">
@@ -103,9 +100,6 @@
             <button class="btn-secondary btn-large" onclick="openContactModal()">
               <i data-lucide="mail"></i> Get In Touch
             </button>
-            <a href="#recruiter-hub" class="btn-glass btn-large">
-              <i data-lucide="cpu"></i> Recruiter Skill Search
-            </a>
             <a href="#projects" class="btn-glass btn-large">
               <i data-lucide="layers"></i> 17 Projects
             </a>
@@ -118,13 +112,28 @@
         <div class="hero-visual">
           <div class="avatar-card glass-card shadow-glow">
             <div class="avatar-frame">
-              <img src="assets/profiles/profile-1-250x250.jpg" alt="S Varunakshay" class="avatar-img" onerror="this.src='assets/profiles/profile-2-250x250.jpg'">
+              <img id="hero-avatar-img" src="assets/profiles/profile-executive-blazer.png" alt="S Varunakshay" class="avatar-img" onerror="this.src='assets/profiles/avatar-3-sq.png'">
               <div class="avatar-overlay-badge">
                 <i data-lucide="star"></i> Star Performer @ Datamatics
               </div>
             </div>
+
+            <!-- Profile Picture Kit Sliced Gallery Switcher -->
+            <div class="avatar-switcher-container">
+              <span class="switcher-label"><i data-lucide="camera" style="width:12px; height:12px; display:inline;"></i> Profile Kit Styles</span>
+              <div class="avatar-thumbs-row">
+                <img src="assets/profiles/profile-executive-blazer.png" alt="Executive Blazer" class="avatar-thumb active" title="Executive Blazer (Current)" onclick="switchAvatar('assets/profiles/profile-executive-blazer.png', this)">
+                <img src="assets/profiles/profile-white-corporate.png" alt="White Corporate" class="avatar-thumb" title="Corporate Navy & Watch" onclick="switchAvatar('assets/profiles/profile-white-corporate.png', this)">
+                <img src="assets/profiles/profile-dark-minimal.png" alt="Dark Minimal" class="avatar-thumb" title="Dark Minimal" onclick="switchAvatar('assets/profiles/profile-dark-minimal.png', this)">
+                <img src="assets/profiles/profile-blue-formal.png" alt="Blue Formal" class="avatar-thumb" title="Blue Studio Formal" onclick="switchAvatar('assets/profiles/profile-blue-formal.png', this)">
+                <img src="assets/profiles/profile-teal-charcoal.png" alt="Teal Charcoal" class="avatar-thumb" title="Teal Charcoal" onclick="switchAvatar('assets/profiles/profile-teal-charcoal.png', this)">
+                <img src="assets/profiles/profile-purple-formal.png" alt="Purple Formal" class="avatar-thumb" title="Purple Formal" onclick="switchAvatar('assets/profiles/profile-purple-formal.png', this)">
+                <img src="assets/profiles/profile-yellow-hoodie.png" alt="Yellow Hoodie" class="avatar-thumb" title="Casual Yellow" onclick="switchAvatar('assets/profiles/profile-yellow-hoodie.png', this)">
+                <img src="assets/profiles/profile-red-hoodie.png" alt="Red Hoodie" class="avatar-thumb" title="Casual Red" onclick="switchAvatar('assets/profiles/profile-red-hoodie.png', this)">
+              </div>
+            </div>
             
-            <div class="stats-mini-grid">
+            <div class="stats-mini-grid" style="margin-top: 1rem;">
               <div class="mini-stat">
                 <span class="stat-num">8+</span>
                 <span class="stat-label">Years Total Exp</span>
@@ -281,7 +290,6 @@
               <li><strong>Location:</strong> Puducherry, India</li>
               <li><strong>Date of Joining:</strong> 20-May-2024</li>
               <li><strong>Reporting Managers:</strong> Ilavarasan / D Anand</li>
-              <li><strong>Notice Period:</strong> 60 Days (Bond Completed)</li>
             </ul>
           </div>
 
@@ -873,22 +881,6 @@
     // Initialize icons
     if (window.lucide) {
       lucide.createIcons();
-    }
-
-    // Mobile nav toggle
-    function toggleMobileNav() {
-      const navLinks = document.querySelector('.nav-links');
-      if (navLinks) {
-        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '100%';
-        navLinks.style.left = '0';
-        navLinks.style.right = '0';
-        navLinks.style.background = 'rgba(5, 7, 11, 0.95)';
-        navLinks.style.padding = '1.5rem';
-        navLinks.style.borderBottom = '1px solid var(--border-glass)';
-      }
     }
   </script>
 </body>

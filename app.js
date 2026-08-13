@@ -1357,3 +1357,41 @@ function copyToClipboard(text, btnElem) {
     console.error('Copy error:', err);
   });
 }
+
+// ==========================================
+// 17. AVATAR PORTRAIT SWITCHER
+// ==========================================
+function switchAvatar(imageSrc, elem) {
+  const heroAvatar = document.getElementById('hero-avatar-img');
+  if (heroAvatar) {
+    heroAvatar.src = imageSrc;
+  }
+  document.querySelectorAll('.avatar-thumb').forEach(t => t.classList.remove('active'));
+  if (elem) {
+    elem.classList.add('active');
+  }
+}
+
+// ==========================================
+// 18. MOBILE NAV TOGGLER
+// ==========================================
+function toggleMobileNav() {
+  const navLinks = document.getElementById('main-nav-links');
+  if (navLinks) {
+    navLinks.classList.toggle('mobile-open');
+  }
+}
+
+// Close mobile nav when clicking any nav link
+document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = document.querySelectorAll('.nav-links a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      const container = document.getElementById('main-nav-links');
+      if (container && container.classList.contains('mobile-open')) {
+        container.classList.remove('mobile-open');
+      }
+    });
+  });
+});
+
