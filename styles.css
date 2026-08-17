@@ -742,51 +742,7 @@ body.light-theme .info-pill {
   z-index: 2;
 }
 
-/* AVATAR PORTRAIT SWITCHER */
-.avatar-switcher-container {
-  margin-top: 0.75rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
 
-.switcher-label {
-  font-size: 0.75rem;
-  color: var(--text-dim);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.avatar-thumbs-row {
-  display: flex;
-  justify-content: center;
-  gap: 0.45rem;
-  flex-wrap: wrap;
-  max-width: 320px;
-}
-
-.avatar-thumb {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 2px solid var(--border-glass);
-  cursor: pointer;
-  object-fit: cover;
-  transition: var(--transition-fast);
-}
-
-.avatar-thumb:hover {
-  transform: scale(1.15);
-  border-color: var(--cyan);
-}
-
-.avatar-thumb.active {
-  border-color: var(--cyan);
-  box-shadow: 0 0 10px var(--cyan);
-  transform: scale(1.15);
-}
 
 .stats-mini-grid {
   display: grid;
@@ -1123,9 +1079,9 @@ body.light-theme .badge-pill {
 /* CAREER TIMELINE */
 .timeline-container {
   position: relative;
-  max-width: 900px;
+  max-width: 1180px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 2.5rem 0;
 }
 
 .timeline-container::after {
@@ -1144,7 +1100,7 @@ body.light-theme .timeline-container::after {
 }
 
 .timeline-item {
-  padding: 10px 40px;
+  padding: 12px 48px;
   position: relative;
   width: 50%;
 }
@@ -1154,18 +1110,18 @@ body.light-theme .timeline-container::after {
 
 .timeline-dot {
   position: absolute;
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   background: var(--bg-dark);
   border: 2px solid var(--cyan);
   border-radius: 50%;
-  top: 15px;
+  top: 18px;
   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--cyan);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 body.light-theme .timeline-dot {
@@ -1180,22 +1136,23 @@ body.light-theme .timeline-dot {
   box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
 }
 
-.timeline-item.left .timeline-dot { right: -18px; }
-.timeline-item.right .timeline-dot { left: -18px; }
+.timeline-item.left .timeline-dot { right: -19px; }
+.timeline-item.right .timeline-dot { left: -19px; }
 
 .timeline-content {
-  padding: 1.5rem;
+  padding: 2rem 2.25rem;
+  border-radius: var(--radius-lg);
 }
 
 .timeline-date {
   display: inline-block;
-  padding: 0.25rem 0.75rem;
+  padding: 0.3rem 0.85rem;
   background: var(--cyan);
   color: #000000;
   font-weight: 700;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   border-radius: var(--radius-full);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
 }
 
 body.light-theme .timeline-date {
@@ -1204,36 +1161,36 @@ body.light-theme .timeline-date {
 }
 
 .timeline-content h3 {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 700;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.35rem;
 }
 
 .role-subtitle {
-  font-size: 0.92rem;
+  font-size: 0.96rem;
   color: var(--text-muted);
   margin-bottom: 0.5rem;
 }
 
 .location-text {
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   color: var(--text-dim);
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .timeline-details ul li {
-  font-size: 0.9rem;
+  font-size: 0.93rem;
   color: var(--text-muted);
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.55rem;
   display: flex;
   align-items: flex-start;
-  gap: 0.4rem;
-  line-height: 1.5;
+  gap: 0.5rem;
+  line-height: 1.6;
 }
 
 .timeline-details ul li i {
   color: var(--cyan);
-  margin-top: 0.2rem;
+  margin-top: 0.25rem;
   flex-shrink: 0;
 }
 
@@ -1765,6 +1722,60 @@ body.light-theme .social-btn {
 .social-btn.youtube:hover { background: #ff0000; color: #ffffff; border-color: transparent; }
 .social-btn.instagram:hover { background: #e1306c; color: #ffffff; border-color: transparent; }
 
+/* SCROLL TO TOP FLOATING BUTTON */
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 2.25rem;
+  right: 2.25rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-highlight);
+  color: var(--cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: var(--transition-normal);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.scroll-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top-btn:hover {
+  background: var(--gradient-primary);
+  color: #000000;
+  border-color: transparent;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 242, 254, 0.4);
+}
+
+body.light-theme .scroll-to-top-btn {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  color: #0284c7;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.12);
+}
+
+body.light-theme .scroll-to-top-btn:hover {
+  background: var(--gradient-primary);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 10px 25px rgba(2, 132, 199, 0.35);
+}
+
 /* ==========================================================================
    COMPREHENSIVE MULTI-DEVICE RESPONSIVE BREAKPOINTS
    Desktop, Laptop, Tablet, Mobile
@@ -1975,14 +1986,12 @@ body.light-theme .social-btn {
     font-size: 1.4rem;
   }
 
-  .avatar-thumbs-row {
-    max-width: 260px;
-    gap: 0.35rem;
-  }
-
-  .avatar-thumb {
-    width: 28px;
-    height: 28px;
+  .scroll-to-top-btn {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
   }
 
   .footer-links {
@@ -1990,3 +1999,4 @@ body.light-theme .social-btn {
     gap: 1rem;
   }
 }
+

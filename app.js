@@ -898,6 +898,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCertificateFilters();
   initRecruiterModeToggle();
   initModalBackdropListeners();
+  initScrollToTop();
 });
 
 // ==========================================
@@ -1360,17 +1361,26 @@ function copyToClipboard(text, btnElem) {
 }
 
 // ==========================================
-// 17. AVATAR PORTRAIT SWITCHER
+// 17. SCROLL TO TOP SYSTEM
 // ==========================================
-function switchAvatar(imageSrc, elem) {
-  const heroAvatar = document.getElementById('hero-avatar-img');
-  if (heroAvatar) {
-    heroAvatar.src = imageSrc;
-  }
-  document.querySelectorAll('.avatar-thumb').forEach(t => t.classList.remove('active'));
-  if (elem) {
-    elem.classList.add('active');
-  }
+function initScrollToTop() {
+  const scrollBtn = document.getElementById('scroll-to-top');
+  if (!scrollBtn) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollBtn.classList.add('visible');
+    } else {
+      scrollBtn.classList.remove('visible');
+    }
+  });
+}
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
 }
 
 // ==========================================

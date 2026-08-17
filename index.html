@@ -117,21 +117,6 @@
                 <i data-lucide="star"></i> Star Performer @ Datamatics
               </div>
             </div>
-
-            <!-- Profile Picture Kit Sliced Gallery Switcher -->
-            <div class="avatar-switcher-container">
-              <span class="switcher-label"><i data-lucide="camera" style="width:12px; height:12px; display:inline;"></i> Profile Kit Styles</span>
-              <div class="avatar-thumbs-row">
-                <img src="assets/profiles/profile-executive-blazer.png" alt="Executive Blazer" class="avatar-thumb active" title="Executive Blazer (Current)" onclick="switchAvatar('assets/profiles/profile-executive-blazer.png', this)">
-                <img src="assets/profiles/profile-white-corporate.png" alt="White Corporate" class="avatar-thumb" title="Corporate Navy & Watch" onclick="switchAvatar('assets/profiles/profile-white-corporate.png', this)">
-                <img src="assets/profiles/profile-dark-minimal.png" alt="Dark Minimal" class="avatar-thumb" title="Dark Minimal" onclick="switchAvatar('assets/profiles/profile-dark-minimal.png', this)">
-                <img src="assets/profiles/profile-blue-formal.png" alt="Blue Formal" class="avatar-thumb" title="Blue Studio Formal" onclick="switchAvatar('assets/profiles/profile-blue-formal.png', this)">
-                <img src="assets/profiles/profile-teal-charcoal.png" alt="Teal Charcoal" class="avatar-thumb" title="Teal Charcoal" onclick="switchAvatar('assets/profiles/profile-teal-charcoal.png', this)">
-                <img src="assets/profiles/profile-purple-formal.png" alt="Purple Formal" class="avatar-thumb" title="Purple Formal" onclick="switchAvatar('assets/profiles/profile-purple-formal.png', this)">
-                <img src="assets/profiles/profile-yellow-hoodie.png" alt="Yellow Hoodie" class="avatar-thumb" title="Casual Yellow" onclick="switchAvatar('assets/profiles/profile-yellow-hoodie.png', this)">
-                <img src="assets/profiles/profile-red-hoodie.png" alt="Red Hoodie" class="avatar-thumb" title="Casual Red" onclick="switchAvatar('assets/profiles/profile-red-hoodie.png', this)">
-              </div>
-            </div>
             
             <div class="stats-mini-grid" style="margin-top: 1rem;">
               <div class="mini-stat">
@@ -743,6 +728,11 @@
       <!-- Content populated dynamically by app.js -->
     </div>
   </dialog>
+
+  <!-- SCROLL TO TOP FLOATING BUTTON -->
+  <button id="scroll-to-top" class="scroll-to-top-btn" aria-label="Scroll to top" title="Scroll to top" onclick="scrollToTop()">
+    <i data-lucide="arrow-up"></i>
+  </button>
 
   <!-- JavaScript File -->
   <script src="app.js"></script>
