@@ -902,14 +902,33 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==========================================
+// PROFILE PHOTO SWITCHER
+// ==========================================
+function switchProfileImage(imagePath, btnElem) {
+  const mainImg = document.getElementById('hero-avatar-img');
+  if (mainImg) {
+    mainImg.style.opacity = '0.2';
+    setTimeout(() => {
+      mainImg.src = imagePath;
+      mainImg.style.opacity = '1';
+    }, 150);
+  }
+  const thumbs = document.querySelectorAll('.profile-thumb-btn');
+  thumbs.forEach(t => t.classList.remove('active'));
+  if (btnElem) {
+    btnElem.classList.add('active');
+  }
+}
+
+// ==========================================
 // 6. ROLE TYPER ANIMATION
 // ==========================================
 function initRoleTyper() {
   const roles = [
     'MIS & Reporting Analyst',
-    'Billing Automation Specialist',
-    'Full Stack Web Developer',
-    'Future AI Operations Specialist'
+    'Process Automation Specialist',
+    'BFSI Operations Professional',
+    'Full Stack Developer'
   ];
   const typerElem = document.getElementById('role-typer');
   if (!typerElem) return;
@@ -993,15 +1012,31 @@ function renderRecruiterTags(searchQuery = '') {
 }
 
 // ==========================================
-// 8. RENDER COMPLETE 17 PROJECTS
+// 8. RENDER PROJECTS (FEATURED / ALL)
 // ==========================================
+let showAllProjects = false;
+
+function toggleAllProjects() {
+  showAllProjects = !showAllProjects;
+  const activeTab = document.querySelector('.project-filter-bar .proj-tab.active');
+  const filter = activeTab ? activeTab.dataset.filter : 'all';
+  const searchInput = document.getElementById('keyword-search-input');
+  const query = searchInput ? searchInput.value.trim() : '';
+  renderProjects(filter, query);
+}
+
 function renderProjects(filterCategory = 'all', searchQuery = '') {
   const container = document.getElementById('projects-container');
   if (!container) return;
 
   container.innerHTML = '';
 
-  const filtered = PROJECTS_DATA.filter(proj => {
+  let dataset = PROJECTS_DATA;
+  if (!showAllProjects && filterCategory === 'all' && searchQuery === '') {
+    dataset = PROJECTS_DATA.slice(0, 6);
+  }
+
+  const filtered = dataset.filter(proj => {
     const matchesCat = (filterCategory === 'all') || (proj.category === filterCategory);
     const matchesSearch = searchQuery === '' || 
       proj.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -1009,6 +1044,14 @@ function renderProjects(filterCategory = 'all', searchQuery = '') {
       proj.tech.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()));
     return matchesCat && matchesSearch;
   });
+
+  const toggleBtn = document.getElementById('toggle-all-projects-btn');
+  if (toggleBtn) {
+    const span = toggleBtn.querySelector('span');
+    if (span) {
+      span.textContent = showAllProjects ? 'Show Featured Projects Only' : 'View All Projects (17)';
+    }
+  }
 
   if (filtered.length === 0) {
     container.innerHTML = `
@@ -1036,14 +1079,18 @@ function renderProjects(filterCategory = 'all', searchQuery = '') {
         <span class="project-badge ${proj.badgeClass}">${proj.badge}</span>
       </div>
       <div class="project-content">
-        <h3>${proj.name}</h3>
-        <p>${proj.shortDesc}</p>
-        <div class="tech-stack-pills">
-          ${techPillsHtml}
+        <div style="display:flex; flex-direction:column; flex-grow:1;">
+          <h3>${proj.name}</h3>
+          <p>${proj.shortDesc}</p>
         </div>
-        <button class="btn-sm btn-glass" onclick="openProjectModal('${proj.id}')">
-          View Details <i data-lucide="external-link"></i>
-        </button>
+        <div style="margin-top:auto;">
+          <div class="tech-stack-pills">
+            ${techPillsHtml}
+          </div>
+          <button class="btn-sm btn-glass" onclick="openProjectModal('${proj.id}')" style="width:100%; justify-content:center;">
+            View Details <i data-lucide="external-link"></i>
+          </button>
+        </div>
       </div>
     `;
 
@@ -1054,15 +1101,31 @@ function renderProjects(filterCategory = 'all', searchQuery = '') {
 }
 
 // ==========================================
-// 9. RENDER CERTIFICATES (37 Certificates)
+// 9. RENDER CERTIFICATES (FEATURED / ALL)
 // ==========================================
+let showAllCertificates = false;
+
+function toggleAllCertificates() {
+  showAllCertificates = !showAllCertificates;
+  const activeTab = document.querySelector('.cert-filter-bar .cert-tab.active');
+  const filter = activeTab ? activeTab.dataset.filter : 'all';
+  const searchInput = document.getElementById('keyword-search-input');
+  const query = searchInput ? searchInput.value.trim() : '';
+  renderCertificates(filter, query);
+}
+
 function renderCertificates(filterCategory = 'all', searchQuery = '') {
   const container = document.getElementById('certificates-container');
   if (!container) return;
 
   container.innerHTML = '';
 
-  const filtered = CERTIFICATES_DATA.filter(cert => {
+  let dataset = CERTIFICATES_DATA;
+  if (!showAllCertificates && filterCategory === 'all' && searchQuery === '') {
+    dataset = CERTIFICATES_DATA.slice(0, 6);
+  }
+
+  const filtered = dataset.filter(cert => {
     const matchesCat = (filterCategory === 'all') || (cert.category === filterCategory);
     const matchesSearch = searchQuery === '' ||
       cert.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -1071,6 +1134,14 @@ function renderCertificates(filterCategory = 'all', searchQuery = '') {
       cert.skills.some(s => s.toLowerCase().includes(searchQuery.toLowerCase()));
     return matchesCat && matchesSearch;
   });
+
+  const toggleBtn = document.getElementById('toggle-all-certs-btn');
+  if (toggleBtn) {
+    const span = toggleBtn.querySelector('span');
+    if (span) {
+      span.textContent = showAllCertificates ? 'Show Featured Certifications Only' : 'View Full Collection (37)';
+    }
+  }
 
   if (filtered.length === 0) {
     container.innerHTML = `
