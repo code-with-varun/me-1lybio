@@ -1157,6 +1157,7 @@ body.light-theme .timeline-dot {
 .timeline-content {
   padding: 2rem 2.25rem;
   border-radius: var(--radius-lg);
+  text-align: left;
 }
 
 .timeline-date {
@@ -1179,18 +1180,21 @@ body.light-theme .timeline-date {
   font-size: 1.35rem;
   font-weight: 700;
   margin-bottom: 0.35rem;
+  text-align: left;
 }
 
 .role-subtitle {
   font-size: 0.96rem;
   color: var(--text-muted);
   margin-bottom: 0.5rem;
+  text-align: left;
 }
 
 .location-text {
   font-size: 0.84rem;
   color: var(--text-dim);
   margin-bottom: 1.25rem;
+  text-align: left;
 }
 
 .timeline-details ul li {
@@ -1201,6 +1205,9 @@ body.light-theme .timeline-date {
   align-items: flex-start;
   gap: 0.5rem;
   line-height: 1.6;
+  text-align: left;
+  word-spacing: normal;
+  letter-spacing: normal;
 }
 
 .timeline-details ul li i {
