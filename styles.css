@@ -703,7 +703,7 @@ body.light-theme .info-pill {
 .avatar-wrapper {
   position: relative;
   display: inline-block;
-  margin: 0 auto 0.5rem;
+  margin: 0 auto 1.15rem;
 }
 
 .avatar-frame {
@@ -732,21 +732,21 @@ body.light-theme .info-pill {
 
 .avatar-overlay-badge {
   position: absolute;
-  bottom: -8px;
+  bottom: -16px;
   left: 50%;
   transform: translateX(-50%);
   background: var(--gold);
   color: #000000;
   font-weight: 700;
   font-size: 0.75rem;
-  padding: 0.3rem 0.85rem;
+  padding: 0.35rem 0.9rem;
   border-radius: var(--radius-full);
   white-space: nowrap;
-  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.45);
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.5);
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  z-index: 2;
+  z-index: 3;
 }
 
 .stats-mini-grid {
