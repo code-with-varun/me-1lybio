@@ -2043,11 +2043,11 @@ body.light-theme .scroll-to-top-btn:hover {
    SIMPLIFIED PORTFOLIO NEW COMPONENT STYLES
    ========================================== */
 
-/* Focus Pillars Grid (About Section) */
+/* Focus Pillars Grid (About Section - 4 Cards Single Row) */
 .focus-pillars-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
 }
 
 .focus-pillar {
