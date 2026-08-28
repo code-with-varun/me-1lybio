@@ -19,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   
   <!-- CSS Styles -->
-  <link rel="stylesheet" href="styles.css?v=20260828_08">
+  <link rel="stylesheet" href="styles.css?v=20260828_09">
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -45,6 +45,14 @@
         <a href="#projects"><i data-lucide="folder-git-2"></i> Featured Projects</a>
         <a href="#certificates"><i data-lucide="award"></i> Certifications</a>
         <a href="#ai-vision"><i data-lucide="sparkles"></i> Future Focus</a>
+        <div class="mobile-nav-footer">
+          <a href="assets/VARUNAKSHAY_FSD_MIS_RESUME_2024.pdf" download class="btn-primary" style="justify-content:center; gap:0.5rem; width:100%;">
+            <i data-lucide="download"></i> Download CV (PDF)
+          </a>
+          <button class="btn-glass" onclick="openContactModal(); closeMobileNav();" style="justify-content:center; gap:0.5rem; width:100%;">
+            <i data-lucide="send"></i> Contact Me
+          </button>
+        </div>
       </nav>
 
       <div class="nav-actions">
@@ -57,7 +65,7 @@
         </button>
       </div>
 
-      <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" onclick="toggleMobileNav()">
+      <button id="mobile-menu-btn" class="mobile-menu-toggle" aria-label="Toggle navigation menu" onclick="toggleMobileNav()">
         <i data-lucide="menu"></i>
       </button>
     </div>

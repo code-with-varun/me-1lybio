@@ -1455,14 +1455,41 @@ function scrollToTop() {
 }
 
 // ==========================================
-// 18. MOBILE NAV TOGGLER
+// 18. MOBILE HAMBURGER MENU NAVIGATION
 // ==========================================
 function toggleMobileNav() {
   const navLinks = document.getElementById('main-nav-links');
-  if (navLinks) {
-    navLinks.classList.toggle('mobile-open');
+  const toggleBtn = document.getElementById('mobile-menu-btn');
+  if (!navLinks) return;
+
+  const isOpen = navLinks.classList.toggle('mobile-open');
+  
+  if (toggleBtn) {
+    toggleBtn.innerHTML = isOpen ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
+    if (window.lucide) lucide.createIcons();
   }
 }
+
+function closeMobileNav() {
+  const navLinks = document.getElementById('main-nav-links');
+  const toggleBtn = document.getElementById('mobile-menu-btn');
+  if (navLinks && navLinks.classList.contains('mobile-open')) {
+    navLinks.classList.remove('mobile-open');
+    if (toggleBtn) {
+      toggleBtn.innerHTML = '<i data-lucide="menu"></i>';
+      if (window.lucide) lucide.createIcons();
+    }
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('#main-nav-links a');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      closeMobileNav();
+    });
+  });
+});
 
 // ==========================================
 // 19. LIGHT / DARK THEME SYSTEM
