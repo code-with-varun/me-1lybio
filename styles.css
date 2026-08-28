@@ -2071,11 +2071,54 @@ body.light-theme .scroll-to-top-btn:hover {
    SIMPLIFIED PORTFOLIO NEW COMPONENT STYLES
    ========================================== */
 
-/* Focus Pillars Grid (About Section - 4 Cards Single Row) */
+/* Focus Pillars Grid (About Section - 4 Cards Single Row on Desktop) */
 .focus-pillars-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
+}
+
+/* Employment Grid (Datamatics Role) */
+.employment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 1.5rem;
+}
+
+.responsibilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.85rem;
+}
+
+/* RESPONSIVE OVERRIDES FOR COMPONENTS */
+@media (max-width: 1024px) {
+  .focus-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.15rem;
+  }
+
+  .employment-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .focus-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .employment-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .responsibilities-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
 }
 
 .focus-pillar {
