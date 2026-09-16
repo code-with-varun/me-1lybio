@@ -1312,38 +1312,98 @@ body.light-theme .proj-tab:hover {
 .project-img-wrapper {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 240px;
   flex-shrink: 0;
   overflow: hidden;
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(10, 14, 23, 0.95);
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
-.project-img {
+.project-img-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  filter: blur(18px) brightness(0.55) opacity(0.5);
+  transform: scale(1.15);
+  pointer-events: none;
+  z-index: 0;
+  transition: filter 0.35s ease, opacity 0.35s ease;
+}
+
+body.light-theme .project-img-bg {
+  filter: blur(18px) brightness(0.9) opacity(0.35);
+}
+
+.project-img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  max-width: 95%;
+  max-height: 92%;
+  object-fit: contain;
   display: block;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: auto;
+  border-radius: var(--radius-sm);
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.45));
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card:hover .project-img {
-  transform: scale(1.06);
+  transform: scale(1.05);
+}
+
+.project-card:hover .project-img-bg {
+  opacity: 0.7;
+  filter: blur(14px) brightness(0.65) opacity(0.7);
+}
+
+/* Image Quick Zoom Button (Icon Only) */
+.img-zoom-btn {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  z-index: 3;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-main);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: var(--transition-fast);
+}
+
+.img-zoom-btn:hover {
+  background: var(--cyan);
+  color: #000000;
+  opacity: 1;
+  border-color: var(--cyan);
+  transform: scale(1.1);
+  box-shadow: 0 4px 14px rgba(0, 242, 254, 0.45);
 }
 
 .project-badge {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  bottom: 0.75rem;
+  right: 0.75rem;
   padding: 0.3rem 0.8rem;
   border-radius: var(--radius-full);
   font-size: 0.75rem;
   font-weight: 700;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  z-index: 3;
 }
 
 .mis-badge { background: var(--cyan); color: #000000; }
@@ -1441,10 +1501,11 @@ body.light-theme .cert-tab:hover {
 
 .certificate-card {
   border-radius: var(--radius-lg);
-  padding: 1.5rem;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
   transition: var(--transition-normal);
 }
 
@@ -1452,6 +1513,54 @@ body.light-theme .cert-tab:hover {
   border-color: rgba(168, 85, 247, 0.4);
   box-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.2);
   transform: translateY(-4px);
+}
+
+/* CERTIFICATE LIVE PDF PREVIEW HEADER WRAPPER */
+.cert-card-preview-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: #0a0e17;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.cert-pdf-preview-iframe {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: calc(100% + 24px);
+  height: calc(100% + 24px);
+  border: none;
+  pointer-events: none;
+  background: #0f172a;
+  overflow: hidden;
+  transform: scale(1);
+  transform-origin: top center;
+  transition: transform 0.4s ease;
+}
+
+.cert-card-preview-wrapper:hover .cert-pdf-preview-iframe {
+  transform: scale(1.04);
+}
+
+.cert-pdf-overlay-clickpad {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s ease;
+}
+
+.cert-card-preview-wrapper:hover .cert-pdf-overlay-clickpad {
+  background: rgba(0, 242, 254, 0.05);
 }
 
 .cert-card-header {
@@ -1676,6 +1785,8 @@ body.light-theme .footer-copy {
   padding: 0;
   max-width: 650px;
   width: 90%;
+  position: fixed;
+  inset: 0;
   margin: auto;
   color: var(--text-main);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
@@ -2281,5 +2392,115 @@ body.light-theme .scroll-to-top-btn:hover {
   flex-shrink: 0;
   margin-top: 3px;
 }
+
+/* HIGH-RES LIGHTBOX MODAL STYLES */
+dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+}
+
+.lightbox-dialog {
+  max-width: 900px;
+  width: 92vw;
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  background: rgba(10, 14, 23, 0.96);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-highlight);
+  border-radius: var(--radius-lg);
+  color: var(--text-main);
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+
+.lightbox-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.lightbox-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-glass);
+  background: rgba(15, 23, 42, 0.6);
+}
+
+.lightbox-header h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--cyan);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lightbox-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-img-frame {
+  position: relative;
+  width: 100%;
+  max-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-glass);
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.lightbox-img-frame img {
+  max-width: 100%;
+  max-height: 65vh;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.lightbox-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1.25rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* PDF CERTIFICATE PREVIEW LIGHTBOX STYLES */
+.pdf-lightbox-dialog {
+  max-width: 1000px;
+  width: 95vw;
+}
+
+.pdf-frame-wrapper {
+  position: relative;
+  width: 100%;
+  height: 72vh;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-glass);
+  overflow: hidden;
+  background: #0f172a;
+}
+
+.pdf-frame-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
 
 

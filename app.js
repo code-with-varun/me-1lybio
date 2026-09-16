@@ -115,12 +115,12 @@ const PROJECTS_DATA = [
   // MIS & AUTOMATION PROJECTS (8 Projects)
   // ----------------------------------------------------
   {
-    id: 'mis-billing',
+    id: 'mis-agency-billing',
     name: 'Recovery Agency Billing Automation',
     category: 'mis',
     badge: 'MIS Automation',
     badgeClass: 'mis-badge',
-    image: 'assets/projects/portfolio-excel.jpg',
+    image: 'assets/projects/portfolio-agency-billing.jpg',
     shortDesc: 'Automated payout calculation and billing QC system for recovery agency vendor invoices at Datamatics.',
     description: 'Engineered an end-to-end automated invoice validation and vendor payout calculation pipeline for Datamatics BFSI recovery agency partners. Replaced manual multi-workbook reconciliations with dynamic formula logic, exception flags, and automated payout tiers.',
     highlights: [
@@ -137,7 +137,7 @@ const PROJECTS_DATA = [
     category: 'mis',
     badge: 'Billing Automation',
     badgeClass: 'mis-badge',
-    image: 'assets/projects/portfolio-excel.jpg',
+    image: 'assets/projects/portfolio-callcenter-qc.jpg',
     shortDesc: 'Quality control automation verifying billable hours, rates, attendance logs, and vendor SLAs.',
     description: 'Developed an automated billing quality control model to audit third-party call center vendor invoices against attendance logs, shift rosters, and contractual rate cards. Features real-time variance detection and penalty computation.',
     highlights: [
@@ -154,7 +154,7 @@ const PROJECTS_DATA = [
     category: 'mis',
     badge: 'BFSI Automation',
     badgeClass: 'mis-badge',
-    image: 'assets/projects/portfolio-excel.jpg',
+    image: 'assets/projects/portfolio-creditcard-billing.jpg',
     shortDesc: 'Streamlined billing automation for credit card recovery processing, dispute tracking, and exceptions.',
     description: 'Designed a high-throughput data processing template for credit card recovery settlements, chargeback validations, and exception management. Accelerated financial close times through automated categorization formulas.',
     highlights: [
@@ -171,7 +171,7 @@ const PROJECTS_DATA = [
     category: 'mis',
     badge: 'Financial MIS',
     badgeClass: 'mis-badge',
-    image: 'assets/projects/portfolio-excel.jpg',
+    image: 'assets/projects/portfolio-payout-validation.jpg',
     shortDesc: 'Comprehensive payout MIS tracking system for vendor payouts, commission tiers, and reconciliation.',
     description: 'Built a centralized vendor payout tracking system monitoring monthly disbursements, commission tier structures, incentive models, and historical settlement trends across all recovery partners.',
     highlights: [
@@ -205,7 +205,7 @@ const PROJECTS_DATA = [
     category: 'mis',
     badge: 'HR MIS',
     badgeClass: 'mis-badge',
-    image: 'assets/projects/portfolio-excel.jpg',
+    image: 'assets/projects/portfolio-hr-mis.jpg',
     shortDesc: 'Cross-functional dashboard linking HR productivity metrics, timesheets, and SLA outputs.',
     description: 'Architected an integrated performance and human resource MIS dashboard monitoring workforce headcount, shift adherence, billable hours, timesheets, and individual productivity scores across departments.',
     highlights: [
@@ -222,7 +222,7 @@ const PROJECTS_DATA = [
     category: 'mis',
     badge: 'Sales MIS',
     badgeClass: 'mis-badge',
-    image: 'assets/projects/portfolio-excel.jpg',
+    image: 'assets/projects/portfolio-sales-mis.jpg',
     shortDesc: 'Multi-store & product sales MIS developed for performance decision support and revenue trend analysis.',
     description: 'Designed a sales analytics suite during retail management tenure to analyze daily sales velocity, category margins, vendor inventory turnover, and employee sales conversion metrics.',
     highlights: [
@@ -239,7 +239,7 @@ const PROJECTS_DATA = [
     category: 'mis',
     badge: 'Productivity MIS',
     badgeClass: 'mis-badge',
-    image: 'assets/projects/portfolio-excel.jpg',
+    image: 'assets/projects/portfolio-productivity-mis.jpg',
     shortDesc: 'Operational dashboard providing clear team performance visibility, throughput rates, and quality scores.',
     description: 'Created a real-time operational dashboard for team leads and managers to monitor daily file throughput, PKT assessment scores, error feedback loops, and individual productivity benchmarks.',
     highlights: [
@@ -1074,9 +1074,13 @@ function renderProjects(filterCategory = 'all', searchQuery = '') {
     const techPillsHtml = proj.tech.slice(0, 4).map(t => `<span>${t}</span>`).join('');
 
     card.innerHTML = `
-      <div class="project-img-wrapper">
+      <div class="project-img-wrapper" onclick="openImageLightbox('${proj.image}', '${proj.name.replace(/'/g, "\\'")}')" title="Click to view full uncropped 400x400 image">
+        <img src="${proj.image}" alt="" class="project-img-bg" aria-hidden="true">
         <img src="${proj.image}" alt="${proj.name}" class="project-img" loading="lazy" onerror="this.src='assets/projects/portfolio-excel.jpg'">
         <span class="project-badge ${proj.badgeClass}">${proj.badge}</span>
+        <button class="img-zoom-btn" onclick="event.stopPropagation(); openImageLightbox('${proj.image}', '${proj.name.replace(/'/g, "\\'")}')" title="Zoom Image">
+          <i data-lucide="maximize-2"></i>
+        </button>
       </div>
       <div class="project-content">
         <div style="display:flex; flex-direction:column; flex-grow:1;">
@@ -1164,23 +1168,25 @@ function renderCertificates(filterCategory = 'all', searchQuery = '') {
     const skillsHtml = cert.skills.slice(0, 3).map(s => `<span>${s}</span>`).join('');
 
     card.innerHTML = `
-      <div class="cert-card-header">
-        <div class="cert-icon-box">
-          <i data-lucide="${cert.icon}"></i>
-        </div>
+      <div class="cert-card-preview-wrapper" onclick="openPdfLightbox('${encodeURI(cert.file)}', '${cert.title.replace(/'/g, "\\'")}', '${cert.issuer.replace(/'/g, "\\'")}')" title="Click to expand PDF document">
+        <iframe src="${encodeURI(cert.file)}#toolbar=0&navpanes=0&scrollbar=0&view=FitH" class="cert-pdf-preview-iframe" title="${cert.title} PDF Preview" tabindex="-1" scrolling="no" style="overflow:hidden;"></iframe>
+        <div class="cert-pdf-overlay-clickpad"></div>
         <span class="project-badge ${cert.badgeClass}">${cert.badge}</span>
+        <button class="img-zoom-btn" onclick="event.stopPropagation(); openPdfLightbox('${encodeURI(cert.file)}', '${cert.title.replace(/'/g, "\\'")}', '${cert.issuer.replace(/'/g, "\\'")}')" title="Expand PDF">
+          <i data-lucide="maximize-2"></i>
+        </button>
       </div>
-      <div class="project-content" style="padding-top: 1rem;">
+      <div class="project-content">
         <span class="cert-issuer">${cert.issuer}</span>
-        <h3 class="cert-title">${cert.title}</h3>
+        <h3 class="cert-title" style="cursor:pointer;" onclick="openPdfLightbox('${encodeURI(cert.file)}', '${cert.title.replace(/'/g, "\\'")}', '${cert.issuer.replace(/'/g, "\\'")}')">${cert.title}</h3>
         <p class="cert-desc">${cert.description}</p>
         <div class="tech-stack-pills">
           ${skillsHtml}
         </div>
         <div class="cert-actions">
-          <a href="${encodeURI(cert.file)}" target="_blank" class="btn-sm btn-primary" style="flex:1; justify-content:center;">
+          <button onclick="openPdfLightbox('${encodeURI(cert.file)}', '${cert.title.replace(/'/g, "\\'")}', '${cert.issuer.replace(/'/g, "\\'")}')" class="btn-sm btn-primary" style="flex:1; justify-content:center;">
             <i data-lucide="eye"></i> View PDF
-          </a>
+          </button>
           <a href="${encodeURI(cert.file)}" download class="btn-sm btn-glass" title="Download PDF">
             <i data-lucide="download"></i>
           </a>
@@ -1340,8 +1346,12 @@ function openProjectModal(projectId) {
   const techHtml = proj.tech.map(t => `<span class="tag-pill" style="font-size:0.8rem;">${t}</span>`).join('');
 
   bodyElem.innerHTML = `
-    <div style="margin-bottom:1.5rem; max-height:220px; overflow:hidden; border-radius:var(--radius-md); border:1px solid var(--border-glass);">
-      <img src="${proj.image}" alt="${proj.name}" style="width:100%; height:200px; object-fit:cover;" onerror="this.src='assets/projects/portfolio-excel.jpg'">
+    <div style="position:relative; margin-bottom:1.5rem; min-height:240px; max-height:360px; overflow:hidden; border-radius:var(--radius-md); border:1px solid var(--border-glass); background:rgba(10, 14, 23, 0.95); display:flex; align-items:center; justify-content:center; padding:1rem;">
+      <img src="${proj.image}" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:blur(20px) opacity(0.45); transform:scale(1.2);" aria-hidden="true">
+      <img src="${proj.image}" alt="${proj.name}" style="position:relative; z-index:1; max-width:100%; max-height:320px; object-fit:contain; border-radius:var(--radius-sm); filter:drop-shadow(0 8px 20px rgba(0,0,0,0.5)); cursor:pointer;" onclick="openImageLightbox('${proj.image}', '${proj.name.replace(/'/g, "\\'")}')" title="Click to view full image" onerror="this.src='assets/projects/portfolio-excel.jpg'">
+      <button class="img-zoom-btn" onclick="openImageLightbox('${proj.image}', '${proj.name.replace(/'/g, "\\'")}')" style="bottom:0.75rem; left:0.75rem;" title="Expand Image">
+        <i data-lucide="maximize-2"></i>
+      </button>
     </div>
 
     <div style="margin-bottom:1.5rem;">
@@ -1373,6 +1383,70 @@ function openProjectModal(projectId) {
 
 function closeProjectModal() {
   const dialog = document.getElementById('project-modal');
+  if (dialog && typeof dialog.close === 'function') {
+    dialog.close();
+  }
+}
+
+// ==========================================
+// 14B. HIGH-RES IMAGE LIGHTBOX MODAL
+// ==========================================
+function openImageLightbox(imagePath, titleText) {
+  const dialog = document.getElementById('lightbox-modal');
+  const imgElem = document.getElementById('lightbox-img');
+  const titleElem = document.getElementById('lightbox-title');
+  const downloadLink = document.getElementById('lightbox-download-link');
+
+  if (!dialog || !imgElem) return;
+
+  imgElem.src = imagePath;
+  if (titleElem) titleElem.textContent = titleText || 'Project Image Preview';
+  if (downloadLink) downloadLink.href = imagePath;
+
+  if (window.lucide) lucide.createIcons();
+
+  if (typeof dialog.showModal === 'function') {
+    dialog.showModal();
+  }
+}
+
+function closeImageLightbox() {
+  const dialog = document.getElementById('lightbox-modal');
+  if (dialog && typeof dialog.close === 'function') {
+    dialog.close();
+  }
+}
+
+// ==========================================
+// 14C. CERTIFICATE PDF LIGHTBOX MODAL
+// ==========================================
+function openPdfLightbox(pdfPath, titleText, issuerText) {
+  const dialog = document.getElementById('pdf-lightbox-modal');
+  const iframeElem = document.getElementById('pdf-lightbox-iframe');
+  const titleElem = document.getElementById('pdf-lightbox-title');
+  const issuerElem = document.getElementById('pdf-lightbox-issuer');
+  const newtabLink = document.getElementById('pdf-lightbox-newtab-link');
+  const downloadLink = document.getElementById('pdf-lightbox-download-link');
+
+  if (!dialog || !iframeElem) return;
+
+  iframeElem.src = pdfPath;
+  if (titleElem) titleElem.innerHTML = `<i data-lucide="file-text"></i> ${titleText || 'Certificate Preview'}`;
+  if (issuerElem) issuerElem.textContent = issuerText || 'CERTIFICATION';
+  if (newtabLink) newtabLink.href = pdfPath;
+  if (downloadLink) downloadLink.href = pdfPath;
+
+  if (window.lucide) lucide.createIcons();
+
+  if (typeof dialog.showModal === 'function') {
+    dialog.showModal();
+  }
+}
+
+function closePdfLightbox() {
+  const dialog = document.getElementById('pdf-lightbox-modal');
+  const iframeElem = document.getElementById('pdf-lightbox-iframe');
+  if (iframeElem) iframeElem.src = '';
   if (dialog && typeof dialog.close === 'function') {
     dialog.close();
   }

@@ -717,6 +717,58 @@
     </div>
   </dialog>
 
+  <!-- HIGH-RES IMAGE LIGHTBOX MODAL DIALOG -->
+  <dialog id="lightbox-modal" class="lightbox-dialog">
+    <div class="lightbox-header">
+      <h3 id="lightbox-title"><i data-lucide="image"></i> Project Graphic Preview</h3>
+      <button class="dialog-close-btn" onclick="closeImageLightbox()"><i data-lucide="x"></i></button>
+    </div>
+    <div class="lightbox-body">
+      <div class="lightbox-img-frame">
+        <img id="lightbox-img" src="" alt="Full Project Preview">
+      </div>
+      <div class="lightbox-actions" style="justify-content: flex-end;">
+        <div style="display:flex; gap:0.5rem;">
+          <a id="lightbox-download-link" href="#" download class="btn-sm btn-glass">
+            <i data-lucide="download"></i> Download Image
+          </a>
+          <button class="btn-sm btn-primary" onclick="closeImageLightbox()">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- CERTIFICATE PDF PREVIEW LIGHTBOX MODAL DIALOG -->
+  <dialog id="pdf-lightbox-modal" class="lightbox-dialog pdf-lightbox-dialog">
+    <div class="lightbox-header">
+      <div>
+        <span id="pdf-lightbox-issuer" class="cert-issuer" style="font-size:0.75rem; margin:0;">ISSUER</span>
+        <h3 id="pdf-lightbox-title" style="font-size:1.1rem; margin-top:0.2rem;"><i data-lucide="file-text"></i> Certificate Document Preview</h3>
+      </div>
+      <button class="dialog-close-btn" onclick="closePdfLightbox()"><i data-lucide="x"></i></button>
+    </div>
+    <div class="lightbox-body" style="padding:1rem;">
+      <div class="pdf-frame-wrapper">
+        <iframe id="pdf-lightbox-iframe" src="" title="Certificate PDF Viewer"></iframe>
+      </div>
+      <div class="lightbox-actions" style="justify-content: flex-end; margin-top:1rem;">
+        <div style="display:flex; gap:0.5rem;">
+          <a id="pdf-lightbox-newtab-link" href="#" target="_blank" class="btn-sm btn-glass">
+            <i data-lucide="external-link"></i> Open Fullscreen PDF
+          </a>
+          <a id="pdf-lightbox-download-link" href="#" download class="btn-sm btn-glass">
+            <i data-lucide="download"></i> Download PDF
+          </a>
+          <button class="btn-sm btn-primary" onclick="closePdfLightbox()">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
   <!-- SCROLL TO TOP FLOATING BUTTON -->
   <button id="scroll-to-top" class="scroll-to-top-btn" aria-label="Scroll to top" title="Scroll to top" onclick="scrollToTop()">
     <i data-lucide="arrow-up"></i>
